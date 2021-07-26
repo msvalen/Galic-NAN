@@ -2,7 +2,7 @@ const db = require("../dbConfig/init");
 
 const User = require("./User");
 
-class stocksBought {
+class StocksBought {
   constructor(data, user) {
     this.buy_id = data.buy_id;
     this.ticker = data.ticker;
@@ -20,7 +20,7 @@ class stocksBought {
     return new Promise(async (resolve, reject) => {
       try {
         let buyData = await db.query("SELECT * FROM buys");
-        let buys = buyData.rows.map((b) => new stocksBought(b));
+        let buys = buyData.rows.map((b) => new StocksBought(b));
         resolve(buys);
       } catch (err) {
         reject("Your stocks cannot be found");
@@ -60,4 +60,23 @@ class stocksBought {
       }
     });
   }
+  destroy() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const result = await db.query(
+          "DELETE FROM buys WHERE id = $1 RETURNING buy_id",
+          [this.buy_id]
+        );
+        const user = await User.findById(result.rows[0].user_id);
+        const stocksBought = await user.stocksBought;
+        if (!stocksBought.length) {
+          await user.destroy();
+        }
+        resolve("Stock bought was deleted");
+      } catch (err) {
+        reject("Stock bought could not be deleted");
+      }
+    });
+  }
 }
+module.exports = StocksBought;
