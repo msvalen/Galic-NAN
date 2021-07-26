@@ -7,11 +7,11 @@
 - Shav
 - Akash
 
-### General Purpose of the App:
+## General Purpose of the App:
 
 Allow users the ability to track their portfolio, with their chosen stocks, monitoring the individual price changes, returning their profit/loss on their investments, trace the movement of their individual holdings and get a general idea of how their portfolio is doing.
 
-### Features:
+## Features:
 
 - Users are able to login
 - Users are able to track their portfolio.
@@ -20,15 +20,15 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 - Users are able to delete themself from the app
 
 
-### Installation & Usage
+## Installation & Usage
 
-#### Prerequisites
+### Prerequisites
 - Docker
 
-#### Installation
+### Installation
 - Clone or download the repo
 
-#### Usage
+### Usage
 - Go to the project folder
 - Open the bash terminal
 - Run: bash _scripts/startDev.sh
@@ -42,7 +42,7 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
   - Open a new bash terminal in the project folder
   - Run: bash _scripts/teardown.sh
   
-### Technologies:
+## Technologies:
 
 - Non relational database- PostgreSQL
 - Node
@@ -54,12 +54,12 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 - BCrypt
 - JWT Tokens
 
-### Database Schema
+## Database Schema
 ![Database Schema](./readme-src/DB-schema.JPG)
 
-### API Endpoints
+## API Endpoints
 
-#### Post 
+### Post 
 
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
@@ -67,7 +67,7 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 | Create | /user/buys | POST | User buy new stock |
 
 
-#### Get
+### Get
 
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
@@ -75,23 +75,23 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 | Show | /user/:id | GET | Retrieve all the stocks of a user |
 | Show | /user/buys/:id | GET | Show a particular buy |
 
-####  Update
+###  Update
 
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
 | Update | /user/buys/:id | UPDATE | Change the status of a buy to been sold |
 
-#### Delete
+### Delete
 
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
 | Destroy | /user | DELETE | Destroy user and their buys history |
 
 
-### Changelog 
+## Changelog 
 
-Find the full changelog (here)[changelog.md]
+Find the full changelog [here](./changelog.md)
 
-### License
+## License
 
-(MIT License)[https://opensource.org/licenses/mit-license.php]
+[MIT License](https://opensource.org/licenses/mit-license.php)
