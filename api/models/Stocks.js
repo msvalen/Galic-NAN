@@ -2,7 +2,7 @@ const db = require("../dbConfig/init");
 
 const User = require("./User");
 
-class Stocks {
+class stocksBought {
   constructor(data, user) {
     this.buy_id = data.buy_id;
     this.ticker = data.ticker;
@@ -14,5 +14,17 @@ class Stocks {
       name: data.name,
       path: `/users/${data.user_id}`,
     };
+  }
+
+  static get all() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        let buyData = await db.query("SELECT * FROM buys");
+        let buys = buyData.rows.map((b) => new stocksBought(b));
+        resolve(buys);
+      } catch (err) {
+        reject("Your stocks cannot be found");
+      }
+    });
   }
 }
