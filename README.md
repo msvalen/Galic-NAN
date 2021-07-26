@@ -57,6 +57,16 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 ## Database Schema
 ![Database Schema](./readme-src/DB-schema.JPG)
 
+## Client Endpoints
+
+ - `/# || /#home || /#portfolio` Home page, will show a please login if not and it you are logged it's where the portfolio is. ( the portfolio change the main container)
+ - `/#login` Show the login form (this form change the main container) Needs no Token
+ - `/#invest` Show the do an investment form (this form overlap main) Needs Token
+ - `/#sell` Show the sell an investment form (this form overlap main) Needs Token
+ - `/#logout` It triggers the delete of the session token and it returns to the home page 
+ - `/#error` 404 Page not found (change main)
+
+
 ## API Endpoints
 
 ### Post 
