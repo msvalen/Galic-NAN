@@ -8,3 +8,12 @@ async function show(req, res) {
     res.status(404).json({ err });
   }
 }
+
+async function create(req, res) {
+  try {
+    const stockBought = await StocksBought.create(req.body);
+    res.status(201).json(stockBought);
+  } catch (err) {
+    res.status(422).json({ err });
+  }
+}
