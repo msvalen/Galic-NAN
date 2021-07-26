@@ -18,8 +18,8 @@ services:
     environment: 
       - PGUSER=treasury
       - PGHOST=db
-      - PGPASSWORD=librarypass
-      - PGDATABASE=library
+      - PGPASSWORD=stockspass
+      - PGDATABASE=stocks
       - PGPORT=5432
       - NODE_ENV=development
     depends_on:
@@ -31,9 +31,9 @@ services:
     volumes:
       - "dbdata:/var/lib/postgresql/data"
     environment: 
-      - POSTGRES_DB=library
+      - POSTGRES_DB=stocks
       - POSTGRES_USER=treasury
-      - POSTGRES_PASSWORD=librarypass
+      - POSTGRES_PASSWORD=stockspass
 volumes:
   dbdata:
 networks: 
