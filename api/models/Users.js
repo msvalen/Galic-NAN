@@ -25,9 +25,6 @@ module.exports = class Users {
             };
         });
     };
-            }
-        })
-    }
 
 
 
