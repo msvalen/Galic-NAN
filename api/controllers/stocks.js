@@ -17,3 +17,15 @@ async function create(req, res) {
     res.status(422).json({ err });
   }
 }
+
+async function destroy(req, res) {
+  try {
+    const stockBought = await StocksBought.findById(req.params.buy_id);
+    const resp = await stockBought.destroy();
+    res.status(204).end();
+  } catch (err) {
+    res.status(404).json({ err });
+  }
+}
+
+module.exports = { show, create, destroy };
