@@ -5,6 +5,8 @@
     - Stub file structure
     - Create basic server
     - 1st design in figma
+    - Designed end points
+    - Layout distrubution added
 
 ## Sever
 
