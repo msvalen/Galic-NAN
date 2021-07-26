@@ -33,8 +33,8 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 - Open the bash terminal
 - Run: bash _scripts/startDev.sh
 - You will find:
-  - Client in (localhost:8080)[http://localhost:8080/]
-  - Server in (localhost:5000)[http://localhost:5000/]
+  - Client in [localhost:8080](http://localhost:8080/)
+  - Server in [localhost:5000](http://localhost:5000/)
 - To close the app:
   - Open a new bash terminal in the project folder
   - Run: bash _scripts/stop.sh
