@@ -14,7 +14,7 @@ services:
   api:
     container_name: debug_dev_api
     ports: 
-      - 3000:3000
+      - 5000:5000
     environment: 
       - PGUSER=treasury
       - PGHOST=db
@@ -32,7 +32,7 @@ services:
       - "dbdata:/var/lib/postgresql/data"
     environment: 
       - POSTGRES_DB=library
-      - POSTGRES_USER=futureproof
+      - POSTGRES_USER=treasury
       - POSTGRES_PASSWORD=librarypass
 volumes:
   dbdata:
