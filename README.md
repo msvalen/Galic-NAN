@@ -59,7 +59,7 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 
 ## Client Endpoints
 
- - `/# || /#home || /#portfolio` Home page, will show a please login if not and it you are logged it's where the portfolio is. ( the portfolio change the main container)
+ - `/# || /#home || /#portfolio` Home page, will show a "please login" if not and if yes, home is where the portfolio is. (the portfolio change the main container)
  - `/#login` Show the login form (this form change the main container) Needs no Token
  - `/#invest` Show the do an investment form (this form overlap main) Needs Token
  - `/#sell` Show the sell an investment form (this form overlap main) Needs Token
