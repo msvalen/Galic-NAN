@@ -27,4 +27,37 @@ class stocksBought {
       }
     });
   }
+
+  static async create(buyData) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const {
+          buy_id,
+          ticker,
+          fee,
+          buy_level,
+          num_shared,
+          stored_price,
+          date,
+          been_sold,
+        } = buyData;
+        let result = await db.query(
+          `INSERT INTO buys (buy_id, ticker, fee, buy_level, num_shared, stored_price, date, been_sold) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`,
+          [
+            buy_id,
+            ticker,
+            fee,
+            buy_level,
+            num_shared,
+            stored_price,
+            date,
+            been_sold,
+          ]
+        );
+        resolve(result.rows[0]);
+      } catch (err) {
+        reject("Stock could not be bought");
+      }
+    });
+  }
 }
