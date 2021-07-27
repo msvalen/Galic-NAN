@@ -22,7 +22,7 @@ router.post("/login", async (req, res) => {
     if (!user) {
       throw new Error("No user with this email");
     }
-    const authed = bcrypt.compare(req.body.passsword, user.passwordDigest); //Add passwordDigest in users model?
+    const authed = bcrypt.compare(req.body.passsword, user.password); //Add passwordDigest in users model?
     if (authed) {
       res.status(200).json({ user: user.username });
     } else {
