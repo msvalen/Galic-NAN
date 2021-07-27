@@ -7,6 +7,8 @@
     - 1st design in figma
     - Designed end points
     - Layout distrubution added
+    - Portfolio page now with tables and links
+    - request get All() error deactivated, return dummydata
 
 ## Sever
 
