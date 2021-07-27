@@ -15,3 +15,21 @@ router.post("/register", async (req, res) => {
     res.status(500).json({ err });
   }
 });
+
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findByEmail(req.body.email);
+    if (!user) {
+      throw new Error("No user with this email");
+    }
+    const authed = bcrypt.compare(req.body.passsword, user.passwordDigest); //Add passwordDigest in users model?
+    if (authed) {
+      res.status(200).json({ user: user.username });
+    } else {
+      throw new Error("User could not be authenticated");
+    }
+  } catch (err) {
+    res.status(401).json({ err });
+  }
+});
+module.exports = router;
