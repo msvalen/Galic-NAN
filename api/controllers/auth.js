@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 
@@ -35,7 +36,7 @@ router.post("/login", async (req, res) => {
           token: "Bearer " + token,
         });
       };
-      jwt.sign(payload, "supersecret-secret", { expiresIn: 3600 }, sendToken);
+      jwt.sign(payload, process.env.SECRET, { expiresIn: 3600 }, sendToken);
     } else {
       throw new Error("User could not be authenticated");
     }
