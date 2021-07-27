@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +5,7 @@
     <title>The Treasury</title>
     <link rel="icon" href="./assets/treasure-chesty.svg"/>
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
 
     <!-- Raleway -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,143 +20,50 @@
 
 
 </head>
+<header class="raleway">
 
-<body class="bg-white monty">
-  <div class="flex items-center justify-center min-h-screen bg-gray-900">
-	<div class="col-span-12">
-		<div class="overflow-auto lg:overflow-visible ">
-			<table class="table text-gray-400 border-separate space-y-6 text-sm">
-				<thead class="bg-gray-800 text-gray-500">
-					<tr>
-						<th class="p-3">Brand</th>
-						<th class="p-3 text-left">Category</th>
-						<th class="p-3 text-left">Price</th>
-						<th class="p-3 text-left">Status</th>
-						<th class="p-3 text-left">Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="bg-gray-800">
-						<td class="p-3">
-							<div class="flex align-items-center">
-								<img class="rounded-full h-12 w-12  object-cover" src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" alt="unsplash image">
-								<div class="ml-3">
-									<div class="">Appple</div>
-									<div class="text-gray-500">mail@rgmail.com</div>
-								</div>
-							</div>
-						</td>
-						<td class="p-3">
-							Technology
-						</td>
-						<td class="p-3 font-bold">
-							200.00$
-						</td>
-						<td class="p-3">
-							<span class="bg-green-400 text-gray-50 rounded-md px-2">available</span>
-						</td>
-						<td class="p-3 ">
-							<a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-								<i class="material-icons-outlined text-base">visibility</i>
-							</a>
-							<a href="#" class="text-gray-400 hover:text-gray-100  mx-2">
-								<i class="material-icons-outlined text-base">edit</i>
-							</a>
-							<a href="#" class="text-gray-400 hover:text-gray-100  ml-2">
-								<i class="material-icons-round text-base">delete_outline</i>
-							</a>
-						</td>
-					</tr>
-					<tr class="bg-gray-800">
-						<td class="p-3">
-							<div class="flex align-items-center">
-								<img class="rounded-full h-12 w-12   object-cover" src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="unsplash image">
-								<div class="ml-3">
-									<div class="">Realme</div>
-									<div class="text-gray-500">mail@rgmail.com</div>
-								</div>
-							</div>
-						</td>
-						<td class="p-3">
-							Technology
-						</td>
-						<td class="p-3 font-bold">
-							200.00$
-						</td>
-						<td class="p-3">
-							<span class="bg-red-400 text-gray-50 rounded-md px-2">no stock</span>
-						</td>
-						<td class="p-3">
-							<a href="#" class="text-gray-400 hover:text-gray-100  mr-2">
-								<i class="material-icons-outlined text-base">visibility</i>
-							</a>
-							<a href="#" class="text-gray-400 hover:text-gray-100 mx-2">
-								<i class="material-icons-outlined text-base">edit</i>
-							</a>
-							<a href="#" class="text-gray-400 hover:text-gray-100 ml-2">
-								<i class="material-icons-round text-base">delete_outline</i>
-							</a>
-						</td>
-					</tr>
-					<tr class="bg-gray-800">
-						<td class="p-3">
-							<div class="flex align-items-center">
-								<img class="rounded-full h-12 w-12   object-cover" src="https://images.unsplash.com/photo-1600856209923-34372e319a5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2135&q=80" alt="unsplash image">
-								<div class="ml-3">
-									<div class="">Samsung</div>
-									<div class="text-gray-500">mail@rgmail.com</div>
-								</div>
-							</div>
-						</td>
-						<td class="p-3">
-							Technology
-						</td>
-						<td class="p-3 font-bold">
-							200.00$
-						</td>
-						<td class="p-3">
-							<span class="bg-yellow-400 text-gray-50  rounded-md px-2">start sale</span>
-						</td>
-						<td class="p-3">
-							<a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-								<i class="material-icons-outlined text-base">visibility</i>
-							</a>
-							<a href="#" class="text-gray-400 hover:text-gray-100 mx-2">
-								<i class="material-icons-outlined text-base">edit</i>
-							</a>
-							<a href="#" class="text-gray-400 hover:text-gray-100 ml-2">
-								<i class="material-icons-round text-base">delete_outline</i>
-							</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
-<style>
-	.table {
-		border-spacing: 0 15px;
-	}
 
-	i {
-		font-size: 1rem !important;
-	}
 
-	.table tr {
-		border-radius: 20px;
-	}
 
-	tr td:nth-child(n+5),
-	tr th:nth-child(n+5) {
-		border-radius: 0 .625rem .625rem 0;
-	}
+ <nav class="sm:flex flex-col items-center justify-center py-4 bg-white border-r-2 h-screen border-indigo-400 ">
+ <div class="py-4 px-3">
+     <img class="w-10" src="./assets/treasure-chesty.svg" alt="treasury-logo"/>
+ </div>
 
-	tr td:nth-child(1),
-	tr th:nth-child(1) {
-		border-radius: .625rem 0 0 .625rem;
-	}
-</style>
+ <div>
+ <div class="flex flex-col items-center p-2 space-y-4">
+   <button class="p-2 rounded-full shadow-md  border-indigo-400 hover:bg-indigo-400 hover:text-white  focus:outline-none focus:ring focus:ring-indigo-400 focus:ring-offset-white focus:ring-offset-2">
+    <svg class="w-6 h-6 stroke-current fill-current"      fill=""   stroke="" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g><path d="m142.736 202.577h152.949l99.258-140.616 7.057 41.226 29.57-5.062-15.698-91.702-91.703 15.698 5.063 29.57 41.22-7.056-90.312 127.942h-152.915l-97.475 137.566 24.477 17.344z"/><path d="m480.503 475.577v-326.41h-93.506l-65.938 93.412h-152.96l-136.602 191.849v41.149h-31.497v30h512v-30zm-287.671-202.999h121v202.999h-121zm-131.335 171.439 101.335-142.32v173.88h-101.335zm282.335 31.56v-213.238l58.71-83.173h47.961v296.411z"/></g></svg>
+   </button>
+
+   <div class="flex flex-col items-center py-2 space-y-4">
+    <button class="p-2 rounded-full shadow-md  border-indigo-400 hover:bg-indigo-400 hover:text-white  focus:outline-none focus:ring focus:ring-indigo-400 focus:ring-offset-white focus:ring-offset-2">
+      <svg class="w-6 h-6 stroke-current fill-current"      fill=""   stroke="" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g><path d="m0 34v379c0 35.841 29.159 65 65 65h382c35.841 0 65-29.159 65-65v-379zm482 379c0 19.299-15.701 35-35 35h-382c-19.299 0-35-15.701-35-35v-277h452zm0-307h-452v-42h452z"/><path d="m69 212.974h105v30h-105z"/><path d="m69 277h105v30h-105z"/><path d="m69 341.026h105v30h-105z"/><path d="m323.078 410.922c65.574 0 118.922-53.348 118.922-118.922s-53.348-118.922-118.922-118.922-118.923 53.348-118.923 118.922 53.348 118.922 118.923 118.922zm87.649-133.931h-72.643v-72.641c37.029 6.321 66.321 35.612 72.643 72.641zm-102.644-72.642v102.643h102.647c-7.147 41.917-43.729 73.931-87.652 73.931-49.032 0-88.922-39.891-88.922-88.922-.001-43.923 32.011-80.504 73.927-87.652z"/></g></svg>
+    </button>
+
+    <div class="flex flex-col items-center py-2 space-y-4">
+      <button class="p-2 rounded-full shadow-md  border-indigo-400 hover:bg-indigo-400 hover:text-white  focus:outline-none focus:ring focus:ring-indigo-400 focus:ring-offset-white focus:ring-offset-2">
+        <svg class="w-6 h-6 stroke-current fill-current"      fill=""   stroke="" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g><path d="m419 0h-326c-35.841 0-65 29.159-65 65v447h456v-447c0-35.841-29.159-65-65-65zm-361 482v-359h75.536v24.294c-21.563 6.465-37.325 26.484-37.325 50.124s15.762 43.658 37.325 50.123v193.459h30v-193.459c21.563-6.465 37.325-26.484 37.325-50.123 0-23.64-15.762-43.658-37.325-50.124v-24.294h77.464v175.196c-21.564 6.465-37.325 26.484-37.325 50.124s15.762 43.658 37.325 50.124v42.556h30v-42.557c21.564-6.465 37.325-26.484 37.325-50.124s-15.762-43.658-37.325-50.124v-175.195h77.464v24.294c-21.564 6.465-37.325 26.484-37.325 50.124s15.762 43.658 37.325 50.123v193.459h30v-193.459c21.563-6.465 37.325-26.484 37.325-50.123 0-23.64-15.762-43.658-37.325-50.124v-24.294h75.536v359zm35-452h326c19.299 0 35 15.701 35 35v28h-396v-28c0-19.299 15.701-35 35-35zm55.536 145.092c12.311 0 22.325 10.015 22.325 22.326 0 12.31-10.015 22.325-22.325 22.325-12.311 0-22.325-10.015-22.325-22.325 0-12.311 10.015-22.326 22.325-22.326zm107.464 150.902c12.31 0 22.325 10.015 22.325 22.326s-10.015 22.326-22.325 22.326c-12.311 0-22.325-10.015-22.325-22.326s10.014-22.326 22.325-22.326zm107.464-150.902c12.311 0 22.325 10.015 22.325 22.326 0 12.31-10.015 22.325-22.325 22.325-12.311 0-22.325-10.015-22.325-22.325 0-12.311 10.014-22.326 22.325-22.326z"/></g></svg>
+      </button>
+
+      <div class="flex flex-col items-center py-2 space-y-4">
+        <button class="p-2 rounded-full shadow-md  border-indigo-400 hover:bg-indigo-400 hover:text-white  focus:outline-none focus:ring focus:ring-indigo-400 focus:ring-offset-white focus:ring-offset-2">
+          <svg class="w-6 h-6 stroke-current fill-current"      fill=""   stroke="" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g><path d="m419 0h-326c-35.841 0-65 29.159-65 65v447h456v-447c0-35.841-29.159-65-65-65zm-361 482v-359h75.536v24.294c-21.563 6.465-37.325 26.484-37.325 50.124s15.762 43.658 37.325 50.123v193.459h30v-193.459c21.563-6.465 37.325-26.484 37.325-50.123 0-23.64-15.762-43.658-37.325-50.124v-24.294h77.464v175.196c-21.564 6.465-37.325 26.484-37.325 50.124s15.762 43.658 37.325 50.124v42.556h30v-42.557c21.564-6.465 37.325-26.484 37.325-50.124s-15.762-43.658-37.325-50.124v-175.195h77.464v24.294c-21.564 6.465-37.325 26.484-37.325 50.124s15.762 43.658 37.325 50.123v193.459h30v-193.459c21.563-6.465 37.325-26.484 37.325-50.123 0-23.64-15.762-43.658-37.325-50.124v-24.294h75.536v359zm35-452h326c19.299 0 35 15.701 35 35v28h-396v-28c0-19.299 15.701-35 35-35zm55.536 145.092c12.311 0 22.325 10.015 22.325 22.326 0 12.31-10.015 22.325-22.325 22.325-12.311 0-22.325-10.015-22.325-22.325 0-12.311 10.015-22.326 22.325-22.326zm107.464 150.902c12.31 0 22.325 10.015 22.325 22.326s-10.015 22.326-22.325 22.326c-12.311 0-22.325-10.015-22.325-22.326s10.014-22.326 22.325-22.326zm107.464-150.902c12.311 0 22.325 10.015 22.325 22.326 0 12.31-10.015 22.325-22.325 22.325-12.311 0-22.325-10.015-22.325-22.325 0-12.311 10.014-22.326 22.325-22.326z"/></g></svg>
+        </button>
+
+        
+</nav>
+<nav class=" mt-1 mr-2 p-3">
+  <ul>
+    <button class="ml-3 rounded-xl  bg-indigo-600 text-white rounded-r-none mr-2 px-3 ">Hello Shav!</li>
+    <button class=" rounded-xl  bg-indigo-600 text-white rounded-l-none px-3 focus:outline-none focus:ring focus:ring-indigo-400 focus:ring-offset-white focus:ring-offset-2">Account Settings  </li>
+  </ul>
+</nav>
+
+</header>
+
+<body class=" monty">
+
 
 </body>
 
