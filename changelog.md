@@ -15,6 +15,8 @@
     - Add models and controllers for stocksBought and users
     - Add static functions to models
     - Add aysnc functions to controllers.
+    - Add auth controller, to allow for auth and auth.
+    - Made routes for the get,post,delete etc...
 
 ## Database
 
