@@ -29,4 +29,4 @@ async function destroy (req, res) {
 }
 
 
-module.exports = { create, destroy }
+module.exports = { show, create, destroy }
