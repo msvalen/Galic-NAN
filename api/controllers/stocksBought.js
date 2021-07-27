@@ -1,4 +1,4 @@
-const StocksBought = require("../models.Stocks");
+const StocksBought = require("../models.StocksBought");
 
 async function show(req, res) {
   try {
