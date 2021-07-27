@@ -404,3 +404,4 @@ module.exports = {
 };
 }).call(this)}).call(this,require('_process'))
 },{"../_data.example/portfolio.json":2,"./layout":4,"_process":1}]},{},[3]);
+
