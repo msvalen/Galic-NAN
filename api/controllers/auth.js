@@ -24,7 +24,17 @@ router.post("/login", async (req, res) => {
     }
     const authed = bcrypt.compare(req.body.passsword, user.password); //Add passwordDigest in users model?
     if (authed) {
-      res.status(200).json({ user: user.username });
+      const payload = { username: user.username, email: user.email };
+      const sendToken = (err, token) => {
+        if (err) {
+          throw new Error("Error in token generation");
+        }
+        res.status(200).json({
+          success: true,
+          token: "Bearer " + token,
+        });
+      };
+      jwt.sign(payload, "supersecret-secret", { expiresIn: 3600 }, sendToken);
     } else {
       throw new Error("User could not be authenticated");
     }
