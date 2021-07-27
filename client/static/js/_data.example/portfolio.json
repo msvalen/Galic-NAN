@@ -1,0 +1,27 @@
+{
+    "buys": [
+        {
+            "id": "12345",
+            "ticker": "BTC/USDT",
+            "fee": "1.5",
+            "buy_level": "3012.36",
+            "num_shared": "0.04",
+            "stored_price": "3012.36",
+            "user_id": "123456",
+            "date_of_purchase": "1627313660218"
+        }
+    ],
+    "sells": [
+        {
+            "id": "12345",
+            "ticker": "EU/USDT",
+            "fee": "1.5",
+            "buy_level": "0.75",
+            "num_shared": "1000",
+            "stored_price": "0.0069",
+            "user_id": "123456",
+            "date_of_purchase": "1627113674551"
+        }
+    ]
+
+}
