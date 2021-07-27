@@ -1,4 +1,13 @@
-const StocksBought = require("../models.Stocks");
+const StocksBought = require("../models.StocksBought");
+
+async function index(req, res) {
+  try {
+    const stockBought = await StocksBought.all;
+    res.status(200).json(dogs);
+  } catch (err) {
+    res.status(500).json({ err });
+  }
+}
 
 async function show(req, res) {
   try {
@@ -28,4 +37,4 @@ async function destroy(req, res) {
   }
 }
 
-module.exports = { show, create, destroy };
+module.exports = { index, show, create, destroy };
