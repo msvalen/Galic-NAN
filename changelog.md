@@ -22,6 +22,8 @@
 ## Database
 
     - Create DB Schema
+    - Creat db for selling and buying stocks.
+    - Created a db for users.
 
 ## Misc
 
