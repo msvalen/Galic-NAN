@@ -7,7 +7,7 @@
 - Shav
 - Akash
 
-## General Purpose of the App :
+## General Purpose of the App:
 
 Allow users the ability to track their portfolio, with their chosen stocks, monitoring the individual price changes, returning their profit/loss on their investments, trace the movement of their individual holdings and get a general idea of how their portfolio is doing.
 
@@ -37,10 +37,10 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
   - Server in [localhost:5000](http://localhost:5000/)
 - To close the app:
   - Open a new bash terminal in the project folder
-  - Run: **bash _scripts/stop.sh**
+  - Run: bash _scripts/stop.sh
 - To perfom a complete teardown of the app:
   - Open a new bash terminal in the project folder
-  - Run: **bash _scripts/teardown.sh**
+  - Run: bash _scripts/teardown.sh
   
 ## Technologies:
 
