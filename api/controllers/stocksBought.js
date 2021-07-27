@@ -1,5 +1,14 @@
 const StocksBought = require("../models.StocksBought");
 
+async function index(req, res) {
+  try {
+    const stockBought = await StocksBought.all;
+    res.status(200).json(dogs);
+  } catch (err) {
+    res.status(500).json({ err });
+  }
+}
+
 async function show(req, res) {
   try {
     const stockBought = await StocksBought.findById(req.params.buy_id);
