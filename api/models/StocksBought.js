@@ -1,6 +1,6 @@
 const db = require("../dbConfig/init");
 
-const User = require("./User");
+const User = require("./Users");
 
 class StocksBought {
   constructor(data, user) {
