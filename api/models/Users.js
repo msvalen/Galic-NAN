@@ -1,5 +1,5 @@
 const db = require('../dbConfig/init');
-const Stocks = require('./Stocks');
+// const Stocks = require('./Stocks');
 
 
 module.exports = class Users {
@@ -10,14 +10,13 @@ module.exports = class Users {
         this.password = data.password;
 }
 
-    // did not do an all users function because each individual user does not need to see what user exists
 
-    // return all user stocks 
+    // returns all user stocks 
 
-    get stocks(){
+    static usersStocks(){
         return new Promise (async (resolve, reject) => {
             try {
-                const result = await db.query('SELECT buy_id, ticker, fee, buy_level, num_shared, stored_price, date_of_purchase, FROM buys WHERE ID( //THIS NEEDS REVISING ) = $1', [ this.id ]);
+                const result = await db.query('SELECT buy_id, ticker, fee, buy_level, num_shared, stored_price, date_of_purchase, FROM buys WHERE user_id = $1', [ this.id ]);
                 const stocks = result.rows.map(s => ({ticker: s.ticker, path: `/stocks/${s.buy_id}`}));
                 resolve(stocks);
             } catch (err) {
