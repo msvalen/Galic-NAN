@@ -1,5 +1,5 @@
 const db = require('../dbConfig/init');
-const Stocks = require('./Stocks');
+// const Stocks = require('./Stocks');
 
 
 module.exports = class Users {
@@ -10,7 +10,8 @@ module.exports = class Users {
         this.password = data.password;
 }
 
-    // return all user stocks 
+
+    // returns all user stocks 
 
     static usersStocks(){
         return new Promise (async (resolve, reject) => {
