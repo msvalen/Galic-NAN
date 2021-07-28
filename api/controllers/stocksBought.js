@@ -1,4 +1,4 @@
-const StocksBought = require("../models.StocksBought");
+const StocksBought = require("../models/StocksBought");
 
 async function index(req, res) {
   try {
