@@ -90,7 +90,7 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
-| Update | /buys/:id | PATCH | Make smaller the num of shares |
+| Update | /buys/ | PATCH | Make smaller the num of shares |
 
 ### Delete
 
