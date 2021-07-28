@@ -5,8 +5,7 @@ function signup() {
     sect.append(loginlink)
     loginlink.textContent = "Log in here"
     loginlink.setAttribute('class', 'underline font-semibold')
-    loginlink.setAttribute('href', '#login')
-    loginlink.setAttribute('onclick', 'location.reload()')
+    loginlink.setAttribute('onclick', 'removehash()')
     
     // secta = sect.createElement('a');
     // secta.href = '#Works'
@@ -48,6 +47,7 @@ function signup() {
     passwordInput.setAttribute('class', 'shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border')
     passwordInput.setAttribute('id', 'passwordrepeat')
     passwordInput.setAttribute('placeholder', 'Repeat Password')
+    passwordInput.setAttribute('type', 'password')
 
 
 
@@ -61,4 +61,9 @@ function signup() {
     sect2.setAttribute('value', 'Register')
 
 
+}
+
+function removehash() {
+let destination = window.location.href.substr(0, window.location.href.indexOf('#'))
+window.location.href = destination;
 }
