@@ -29,7 +29,7 @@ async function create(req, res) {
 
 async function destroy(req, res) {
   try {
-    const user = await Users.id(req.params.id);
+    const user = await Users.findByid(req.params.id);
     const resp = await user.destroy();
     res.status(204).end();
   } catch (err) {

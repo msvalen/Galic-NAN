@@ -3,13 +3,14 @@ const db = require("../dbConfig/init");
 const User = require("./Users");
 
 class StocksBought {
-  constructor(data, user) {
+  constructor(data) {
     this.buy_id = data.buy_id;
     this.ticker = data.ticker;
     this.fee = data.fee;
     this.buy_level = data.buy_level;
-    this.num_shared = data.num_shared;
+    this.num_shares = data.num_shares;
     this.stored_price = data.stored_price;
+    this.date_of_purchase = data.date_of_purchase;
     this.user = {
       name: data.name,
       path: `/users/${data.user_id}`,
@@ -35,8 +36,8 @@ class StocksBought {
           `SELECT buys.*, users.name as user_name
           FROM buys JOIN users
           ON buys.user_id = users.id
-          WHERE buys.id = $1;`,
-          [buy_id]
+          WHERE buys.buy_id = $1;`,
+          [id]
         );
         let buy = new StocksBought(buyData.rows[0]);
         resolve(buy);
@@ -48,31 +49,53 @@ class StocksBought {
 
   static async create(buyData) {
     return new Promise(async (resolve, reject) => {
+      
       try {
-        const {
-          buy_id,
-          ticker,
-          fee,
-          buy_level,
-          num_shared,
-          stored_price,
-          date,
-          been_sold,
-        } = buyData;
-        let result = await db.query(
-          `INSERT INTO buys (buy_id, ticker, fee, buy_level, num_shared, stored_price, date, been_sold) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`,
-          [
-            buy_id,
+        if(!buyData.date_of_purchase){
+          const {
             ticker,
             fee,
             buy_level,
-            num_shared,
+            num_shares,
             stored_price,
-            date,
-            been_sold,
-          ]
-        );
-        resolve(result.rows[0]);
+            user_id
+          } = buyData;
+          let result = await db.query(
+            `INSERT INTO buys (ticker, fee, buy_level, num_shares, stored_price,user_id) VALUES ($1,$2,$3,$4,$5,$6) RETURNING buy_id`,
+            [
+              ticker,
+              fee,
+              buy_level,
+              num_shares,
+              stored_price,
+              user_id
+            ]
+          );
+          resolve(result.rows[0]);
+        }
+        else{
+            const {
+              ticker,
+              fee,
+              buy_level,
+              num_shares,
+              stored_price,
+              user_id, date_of_purchase
+            } = buyData;
+            let result = await db.query(
+              `INSERT INTO buys (ticker, fee, buy_level, num_shares, stored_price, user_id, date_of_purchase) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING buy_id`,
+              [
+                ticker,
+                fee,
+                buy_level,
+                num_shares,
+                stored_price,
+                user_id,
+                date_of_purchase
+              ]
+            );
+            resolve(result.rows[0]);
+        }
       } catch (err) {
         reject("Stock could not be bought");
       }
@@ -82,18 +105,25 @@ class StocksBought {
     return new Promise(async (resolve, reject) => {
       try {
         const result = await db.query(
-          "DELETE FROM buys WHERE id = $1 RETURNING buy_id",
+          "DELETE FROM buys WHERE buy_id = $1 RETURNING buy_id",
           [this.buy_id]
         );
-        const user = await User.findById(result.rows[0].user_id);
-        const stocksBought = await user.stocksBought;
-        if (!stocksBought.length) {
-          await user.destroy();
-        }
-        resolve("Stock bought was deleted");
+      
+        resolve("Stock bought was deleted "+result);
       } catch (err) {
         reject("Stock bought could not be deleted");
       }
+    });
+  }
+  update() {
+    return new Promise (async (resolve, reject) => {
+        try {
+            let updatedbuyData = await db.query(`UPDATE buys SET num_shares = $1 WHERE buy_id = $2 RETURNING *;`, [ this.num_shares, this.buy_id ]);
+            let updatedBuy = new StocksBought(updatedbuyData.rows[0]);
+            resolve (updatedBuy);
+        } catch (err) {
+            reject('Error updating stock bought');
+        }
     });
   }
 }

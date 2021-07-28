@@ -7,5 +7,6 @@ router.get("/", stocksBoughtController.index);
 router.get("/:buy_id", stocksBoughtController.show);
 router.post("/", stocksBoughtController.create);
 router.delete("/:buy_id", stocksBoughtController.destroy);
+router.patch("/", stocksBoughtController.update);
 
 module.exports = router;
