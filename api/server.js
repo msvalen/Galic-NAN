@@ -11,7 +11,7 @@ const stocksBoughtRoutes = require("./routes/stocksBought");
 
 //app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
-app.use("/stocksBought", stocksBoughtRoutes);
+app.use("/buys", stocksBoughtRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).send("Hello World!");
