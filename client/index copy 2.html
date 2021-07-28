@@ -23,7 +23,7 @@
 
 </head>
 <body class="monty flex flex-col min-h-screen">
-<header class="raleway">
+<header id="header" class="raleway">
 
   <nav
     class=" sm:flex  items-center justify-between  bg-white  rounded-b-3xl ml-10 p-2 bg-indigo-500  bg-white md:visible hidden">
@@ -175,12 +175,12 @@
 
 
 
-  <div id="tables" class=" border w-full overflow-auto mt-32 mb-10 flex flex-col  items-center justify-center text-2xl font-semibold text-white bg-white raleway">
+  <div id="tables" class=" w-full overflow-auto mt-32 mb-10 flex flex-col  items-center justify-center text-2xl font-semibold text-white bg-white raleway">
 
     <div>
-      <h1 class="text-black">Your Portfolio Overview</h1>
+      <h1 id="table1" class=" text-black">Your Portfolio Overview</h1>
     </div>
-    <div class=" monty w-10/12  ">
+    <div id="table1" class=" monty w-10/12  ">
       <table id="overview" class=" w-full table  text-black border-separate space-y-4 z-2">
 
         <thead class=" raleway bg-indigo-500 text-white">
@@ -225,10 +225,10 @@
     </div>
 
     <div>
-      <h1 class="text-black mt-10">Your Holdings</h1>
+      <h1 id="table2" class="text-black mt-10">Your Holdings</h1>
     </div>
 
-    <div class="monty w-10/12  ">
+    <div id="table2" class="monty w-10/12  ">
       <!-- put the overflow in this div? -->
       <div class="flex justify-center ">
         <table class=" w-full table  text-black border-separate space-y-4 z-2">
@@ -1813,7 +1813,7 @@
 
 
             </tr>
-            
+
             <tr class="bg-indigo-100">
 
               <td>
@@ -2040,10 +2040,10 @@
 
 
     </div>
-    <div>
+    <div id="table3">
       <p class="text-black mt-10">Your Past Holdings</p>
     </div>
-    <div class=" monty w-10/12   ">
+    <div id="table3" class=" monty w-10/12   ">
       <table class=" w-full table  text-black border-separate space-y-4 z-2">
 
         <thead class=" raleway bg-indigo-500 text-white">
@@ -2456,7 +2456,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
-<script defer src="assets/animations.js"></script>
+<script defer src="assets/animations2.js"></script>
 
 
 </html>
