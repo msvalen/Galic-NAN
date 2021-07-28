@@ -69,3 +69,26 @@ h1 {
   padding-bottom:5px;
 }
 
+/* Scrollbar Edit  */
+/* width */
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+margin-right: 5px;
+
+  background: #E0E7FF;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #818CF8; 
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4F46E5; 
+}
