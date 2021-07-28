@@ -84,11 +84,11 @@ margin-right: 5px;
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #818CF8; 
+  background: #3730A3; 
 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #4F46E5; 
+  background: #312E81; 
 }
