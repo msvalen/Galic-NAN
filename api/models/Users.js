@@ -38,7 +38,7 @@ module.exports = class Users {
           num_shares: s.num_shares,
           stored_price: s.stored_price,
           date_of_purchase: s.date_of_purchase,
-          path: `/stocks/${s.buy_id}`
+          path: `/stocks/${s.buy_id}`,
         }));
         resolve(stocks);
       } catch (err) {
@@ -110,4 +110,4 @@ module.exports = class Users {
       }
     });
   }
-}
+};
