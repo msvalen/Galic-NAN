@@ -28,12 +28,14 @@
     - StocksBought are being shown in the stocks bought route.
     - Made some changes to the controllers.
     - Added a index function to show by index.
+    - Fixed server (user and stockbought).
 
 ## Database
 
     - Create DB Schema
     - Creat db for selling and buying stocks.
     - Created a db for users.
+    - Change the way timestamp works
 
 ## Misc
 
