@@ -3,7 +3,7 @@ const StocksBought = require("../models/StocksBought");
 async function index(req, res) {
   try {
     const stockBought = await StocksBought.all;
-    res.status(200).json(dogs);
+    res.status(200).json(stockBought);
   } catch (err) {
     res.status(500).json({ err });
   }
