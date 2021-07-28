@@ -8,3 +8,4 @@ VALUES
 ('GOOG', 17.6, 50, 7, 85, '2015-10-01 00:00:00', 1),
 ('AAPL', 17.6, 50, 7, 85, '2015-10-01 00:00:00', 2);
 
+INSERT INTO users (name, email, password) VALUES ('Akash', 'akash@email.co.uk', 'jkljkl');
