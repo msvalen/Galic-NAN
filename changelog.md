@@ -9,6 +9,9 @@
     - Layout distrubution added
     - Portfolio page now with tables and links
     - request get All() error deactivated, return dummydata
+    - Modified client routing
+    - Changed Porfolio to work with portfolio.html
+    - Added dummy functions to request.js file
 
 ## Sever
 
