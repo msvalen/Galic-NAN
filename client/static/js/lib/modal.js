@@ -3,6 +3,7 @@ const { deleteSell, deleteBuy, updateBuy, createSell} = require('./requests');
 
 //updatebuy
 function changeHoldingForm(id){
+    //
 
     //create the modal form
 }
@@ -26,11 +27,11 @@ function deleteSellEvent(data){
         deleteSell(data);
         p.innerText = 'This past holding has been deleted';
     }
-    catch(error)
+    catch(error){}
     
 }
 
-module.exports={
+module.exports = {
     changeHoldingForm,
-    deletePastHoldingForm,
+   // deletePastHoldingForm
 }

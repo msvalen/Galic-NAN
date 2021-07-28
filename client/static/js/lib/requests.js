@@ -6,12 +6,13 @@ const url = process.env.SERVER_URL || 'http://localhost:5000/';
 
 
 
-async function requestLogin(formcontent){
+async function requestLogin(e){
+    e.preventDefault();
     try {
         const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: formcontent//JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
         }
         const r = await fetch(`${url}/auth/login`, options)
         const data = await r.json()
@@ -22,12 +23,13 @@ async function requestLogin(formcontent){
     }
 }
 
-async function requestRegistration(formcontent) {
+async function requestRegistration(e) {
+    e.preventDefault();
     try {
         const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: formcontent //JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
         }
         const r = await fetch(`${url}/auth/register`, options)
         const data = await r.json()
