@@ -1,5 +1,14 @@
 const Users = require("../models/Users");
 
+async function index(req, res) {
+  try {
+    const users = await Users.all;
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+}
+
 async function show(req, res) {
   try {
     const user = await Users.usersStocks(req.params.id);
@@ -28,4 +37,4 @@ async function destroy(req, res) {
   }
 }
 
-module.exports = { show, create, destroy };
+module.exports = { index, show, create, destroy };
