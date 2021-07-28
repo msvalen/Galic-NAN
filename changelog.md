@@ -20,6 +20,11 @@
     - Add auth controller, to allow for auth and auth.
     - Made routes for the get,post,delete etc...
     - Updated server.js to have app.use for the users, stocksBought and auth js files in our controllers folder.
+    - Updated routes, such that the api is working and showing the data.
+    - Users are being shown in the users route.
+    - StocksBought are being shown in the stocks bought route.
+    - Made some changes to the controllers.
+    - Added a index function to show by index.
 
 ## Database
 
