@@ -1,3 +1,4 @@
+const jwt_decode = require('jwt-decode');
 const { getAll } = require('./requests');
 
 // portfolio
