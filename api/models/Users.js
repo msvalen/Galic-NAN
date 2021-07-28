@@ -2,6 +2,7 @@ const db = require("../dbConfig/init");
 const Stocks = require("./StocksBought");
 
 module.exports = class Users {
+
   constructor(data) {
     this.id = data.id;
     this.name = data.name;
@@ -62,36 +63,55 @@ module.exports = class Users {
       } catch (err) {
         reject("User could not be created");
       }
-    });
-  }
+    
 
-  // delete user
 
-  destroy() {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const result = await db.query(
-          "DELETE FROM users WHERE id = $1 RETURNING id",
-          [this.id]
-        );
-        resolve(`User ${result.id} was deleted`);
-      } catch (err) {
-        reject("User could not be deleted");
+    // create a function findbyEmail
+
+    static findByEmail(email){
+        return new Promise (async (resolve, reject) => {
+            try {
+                let userEmail = await db.query('SELECT email FROM authors WHERE user_email = $1;', [ email ]);
+                let user = new Users(userEmail.rows[0]);
+                resolve(user);
+            } catch (err) {
+                reject('User Email not found');
+            };
+        });
+    };
+
+
+
+    static findById(id) {
+        return new Promise(async (resolve, reject) => {
+          try {
+            let userData = await db.query("SELECT * FROM users WHERE id = $1;", [
+              id,
+            ]);
+            let user = new Users(userData.rows[0]);
+            resolve(user);
+          } catch (err) {
+            reject("User not found");
+          }
+        });
       }
-    });
-  }
+    };
 
-  static findById(id) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        let userData = await db.query("SELECT * FROM users WHERE id = $1;", [
-          id,
-        ]);
-        let user = new Users(userData.rows[0]);
-        resolve(user);
-      } catch (err) {
-        reject("User not found");
-      }
-    });
-  }
-};
+
+
+    // delete user
+
+    destroy(){
+        return new Promise(async(resolve, reject) => {
+            try {
+                const result = await db.query('DELETE FROM users WHERE id = $1 RETURNING id', [ this.id ]);
+                resolve(`User ${result.id} was deleted`)
+            } catch (err) {
+                reject('User could not be deleted')
+            }
+        })   
+    };
+
+
+}
+
