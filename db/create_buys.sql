@@ -7,6 +7,6 @@ CREATE TABLE buys (
     buy_level int NOT NULL,
     num_shares int NOT NULL,
     stored_price int NOT NULL,
-    date_of_purchase TIMESTAMP NOT NULL,
+    date_of_purchase TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     user_id int
 );
