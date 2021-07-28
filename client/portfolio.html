@@ -28,7 +28,7 @@
   <header id="header" class=" raleway">
 
     <nav
-      class=" lg:flex  items-center justify-between  bg-white  rounded-b-3xl ml-10 p-2 bg-indigo-500  bg-white md:visible hidden">
+      class=" lg:flex z-1 items-center justify-between  bg-white  rounded-b-3xl ml-10 p-2 bg-indigo-500  bg-white md:visible hidden">
 
       <div class="py-4 px-2">
         <img class="w-16 border-2 border-white border-offset-2 rounded-full" src="./assets/treasure-chesty.svg"
@@ -236,7 +236,7 @@
       <h1 class=" text-black ">Your Holdings</h1>
       <div class="flex">
         <a class=" text-black rounded-full bg-indigo-500 text-white focus:bg-indigo-600 px-4 py-1 mx-3 font-base text-lg"
-          href="#books/new">Add Investment</a>
+          href="#holding/new" onclick="openModal('addInvestment-modal')">Add Investment</a>
         <button class="text-lg text-black rounded-full bg-indigo-500 text-white px-4 flex py-1 text-bold font-bold">Sort
           <svg class="w-6 h-6 ml-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
@@ -1941,11 +1941,11 @@
 <div
   class=" monty addInvestment-modal animated fadeIn faster fixed w-full h-100 inset-0 overflow-hidden flex justify-center items-center animated fadeIn faster"
   style="background: rgba(0,0,0,.5);">
-  <div class="shadow-md bg-white lg:w-1/2 w-11/12 mx-auto rounded-lg shadow-lg overflow-y-auto">
+  <div class="shadow-md bg-white lg:w-1/2 maxheightmodal w-11/12 mx-auto rounded-lg shadow-lg overflow-y-auto">
     <div class="py-4 text-left px-6">
       <div class="flex justify-between  items-center pb-3">
         <p class="text-2xl font-semibold raleway">Add New Holding</p>
-        <div class="modal-close cursor-pointer" onclick="modalClose('addPost-modal')">
+        <div  class="cursor-pointer" onclick="modalClose('addInvestment-modal')" >
           <svg width="18" height="18" viewBox="0 0 18 18">
             <path
               d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
@@ -1957,7 +1957,7 @@
       <div class="">
         <div class="">
 
-          <form id="login" class="flex flex-col" onsubmit="event.preventDefault();">
+          <form id="addInvestment" class="flex flex-col" onsubmit="event.preventDefault();">
 
             <div class="flex flex-col pt-4">
               <label for="Stock-Ticker" class="text-lg">Stock Ticker</label>
@@ -2007,24 +2007,28 @@
             <div id="subbtndiv" class="flex justify-center">
               <input id="submitbtn" type="submit" value="Autofill based on Ticker"
                 class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8">
+
+                <button class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8" onclick="showmoreoptions()" > More Options </button>
+
                 <input id="submitbtn" type="submit" value="Add to Portfolio"
                 class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8">
+
             </div>
 
 
 
-          </form>
+          </form> <div id="moreOptions" class="hidden">
           <p class="text-center">or</p>
           <div id="buttons_post" class="flex justify-center pt-4 text-xs">
-            <div class="flex text-base items-center px-3 underline font-semibold">Import
+            <div  class="flex text-base items-center px-3 underline font-semibold" >Import
               from
               Broker </div>
             <div class="flex text-base items-center px-3 underline font-semibold">CSV Import
             </div>
-            <div id="addGifBtm" onclick="addgifbtnclicked()"
+            <div id="addGifBtm" 
               class="flex text-base items-center px-3 underline font-semibold">Broker Email
               Import
-              </div>
+              </div> </div>
           </div>
         </div>
       </div>
@@ -2035,9 +2039,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
   <script defer src="assets/animations2.js"></script>
-  <script src='static/js/lib/modal.js'></script>
-  <script src='static/js/lib/requests.js'></script>
-  <script src='static/js/lib/layout.js'></script>
+ 
 
 
 
