@@ -43,6 +43,21 @@ module.exports = class Users {
     
 
 
+    // create a function findbyEmail
+
+    static findByEmail(email){
+        return new Promise (async (resolve, reject) => {
+            try {
+                let userEmail = await db.query('SELECT email FROM authors WHERE user_email = $1;', [ email ]);
+                let user = new Users(userEmail.rows[0]);
+                resolve(user);
+            } catch (err) {
+                reject('User Email not found');
+            };
+        });
+    };
+
+
     // delete user
 
     destroy(){
