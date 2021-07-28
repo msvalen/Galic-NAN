@@ -81,7 +81,7 @@ module.exports = class Users {
         let userData = await db.query("SELECT * FROM users WHERE id = $1;", [
           id,
         ]);
-        let user = new User(userData.rows[0]);
+        let user = new Users(userData.rows[0]);
         resolve(user);
       } catch (err) {
         reject("User not found");
