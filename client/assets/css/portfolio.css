@@ -36,21 +36,21 @@ header {
     padding: 5px;
   }
   
-
 	.table {
-		border-spacing: 0 15px;
+		border-spacing: 0 5px;
 	}
 
-	i {
-		font-size: 1rem !important;
-	}
 
-	.table tr {
-		border-radius: 20px;
-	}
 
-	tr td:nth-child(n+5),
-	tr th:nth-child(n+5) {
+    
+table tbody tr td {
+    text-align: center;
+    padding-left: 0.75rem;
+padding-right: 0.75rem;
+}
+
+	tr td:nth-child(n+10),
+	tr th:nth-child(n+10) {
 		border-radius: 0 .625rem .625rem 0;
 	}
 
