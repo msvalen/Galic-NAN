@@ -74,4 +74,18 @@ module.exports = class Users {
       }
     });
   }
+
+  static findById(id) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        let userData = await db.query("SELECT * FROM users WHERE id = $1;", [
+          id,
+        ]);
+        let user = new User(userData.rows[0]);
+        resolve(user);
+      } catch (err) {
+        reject("User not found");
+      }
+    });
+  }
 };
