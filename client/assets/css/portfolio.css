@@ -63,3 +63,8 @@ padding-right: 0.75rem;
 #overview tr th:nth-child(n+5) {
   border-radius: 0 .625rem .625rem 0;
 }
+
+h1 {
+  font-size:xx-large;
+}
+
