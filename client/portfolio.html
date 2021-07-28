@@ -7,6 +7,7 @@
   <link rel="icon" href="./assets/treasure-chesty.svg" />
   <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/portfolio.css">
+  <script src="./assets/portfolio_main.js" defer></script>
 
   <!-- Raleway -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +28,7 @@
   <header id="header" class=" raleway">
 
     <nav
-      class=" sm:flex  items-center justify-between  bg-white  rounded-b-3xl ml-10 p-2 bg-indigo-500  bg-white md:visible hidden">
+      class=" lg:flex  items-center justify-between  bg-white  rounded-b-3xl ml-10 p-2 bg-indigo-500  bg-white md:visible hidden">
 
       <div class="py-4 px-2">
         <img class="w-16 border-2 border-white border-offset-2 rounded-full" src="./assets/treasure-chesty.svg"
@@ -1938,9 +1939,9 @@
 <!-- Modal -->
 
 <div
-  class="monty addInvestment-modal animated fadeIn faster fixed w-full h-100 inset-0 overflow-hidden flex justify-center items-center animated fadeIn faster"
+  class=" monty addInvestment-modal animated fadeIn faster fixed w-full h-100 inset-0 overflow-hidden flex justify-center items-center animated fadeIn faster"
   style="background: rgba(0,0,0,.5);">
-  <div class="shadow-md bg-white md:w-1/2 w-11/12 mx-auto rounded-lg shadow-lg overflow-y-auto">
+  <div class="shadow-md bg-white lg:w-1/2 w-11/12 mx-auto rounded-lg shadow-lg overflow-y-auto">
     <div class="py-4 text-left px-6">
       <div class="flex justify-between  items-center pb-3">
         <p class="text-2xl font-semibold raleway">Add New Holding</p>
@@ -1959,20 +1960,55 @@
           <form id="login" class="flex flex-col" onsubmit="event.preventDefault();">
 
             <div class="flex flex-col pt-4">
-              <label for="email" class="text-lg">Email Address</label>
-              <input type="email" id="email" placeholder="Samm@futureproof.com" class="shadow border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+              <label for="Stock-Ticker" class="text-lg">Stock Ticker</label>
+              <input id="Stock-Ticker" style="text-transform:uppercase" placeholder="GOOG" class="shadow border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
                         focus:border">
             </div>
 
             <div class="flex flex-col pt-4">
-              <label for="password" class="text-lg">Password</label>
-              <input type="password" id="password" placeholder="Password" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+              <label for="Name" class="text-lg">Name</label>
+              <input id="Name" placeholder="Alphabet Inc." class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
                         focus:border">
             </div>
-            <!-- <p class= "mt-6 text-lg text-red-500 text-center font-bold" >Please try again. </p> -->
+
+            <div class="flex flex-col pt-4">
+              <label for="Sector" class="text-lg">Sector</label>
+              <input id="Sector" placeholder="Communication Services" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+                        focus:border">
+            </div>
+
+            <div class="flex flex-col pt-4">
+              <label for="Fees" class="text-lg">Fees ($)</label>
+              <input type="number" min="0" id="Fees" placeholder="10" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+                        focus:border">
+            </div>
+
+            <div class="flex flex-col pt-4">
+              <label for="Fees" class="text-lg">Quantity</label>
+              <input type="number" min="0" id="Fees" placeholder="20" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+                        focus:border">
+            </div>
+
+            <div class="flex flex-col pt-4">
+              <label for="Fees" class="text-lg">Unit/Share Price ($)</label>
+              <input type="number" min="0" id="Fees" placeholder="2,727.63" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+                        focus:border">
+            </div>
+
+            <div class="flex flex-col pt-4">
+              <label for="Date" class="text-lg">Date of Purchase</label>
+              <input type="date" id="Date" class="shadow border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+                        focus:border">
+            </div>
+
+
+            <div class="flex flex-col justify-center w-full mt-8 rounded-xl py-4 bg-indigo-50"><p class="text-center">Total:</p> <p class="text-center text-3xl">$ ... </p></div>
+
             <div id="subbtndiv" class="flex justify-center">
-              <input id="submitbtn" type="submit" value="Sign In"
-                class="  text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-1/2 font-bold text-lg p-2 mt-8">
+              <input id="submitbtn" type="submit" value="Autofill based on Ticker"
+                class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8">
+                <input id="submitbtn" type="submit" value="Add to Portfolio"
+                class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8">
             </div>
 
 
@@ -1989,15 +2025,8 @@
               class="flex text-base items-center px-3 underline font-semibold">Broker Email
               Import
               </div>
-
           </div>
-
-
         </div>
-
-
-
-
       </div>
     </div>
   </div>
