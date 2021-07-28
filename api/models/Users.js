@@ -11,7 +11,7 @@ module.exports = class Users {
 
   // returns all user stocks
 
-  static usersStocks() {
+  static get usersStocks() {
     return new Promise(async (resolve, reject) => {
       try {
         const result = await db.query(
