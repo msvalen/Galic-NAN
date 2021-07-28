@@ -1,6 +1,6 @@
 const db = require("../dbConfig/init");
 
-const User = require("./User");
+const User = require("./Users");
 
 class StocksBought {
   constructor(data, user) {
@@ -24,6 +24,24 @@ class StocksBought {
         resolve(buys);
       } catch (err) {
         reject("Your stocks cannot be found");
+      }
+    });
+  }
+
+  static findById(id) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        let buyData = await db.query(
+          `SELECT buys.*, users.name as user_name
+          FROM buys JOIN users
+          ON buys.user_id = users.id
+          WHERE buys.id = $1;`,
+          [buy_id]
+        );
+        let buy = new StocksBought(buyData.rows[0]);
+        resolve(buy);
+      } catch (err) {
+        reject("Stock not found");
       }
     });
   }

@@ -6,3 +6,5 @@ CREATE TABLE users (
     email varchar(100) NOT NULL,
     password varchar(50) NOT NULL
 );
+
+INSERT INTO users (name, email, password) VALUES ('Akash', 'akash@email.co.uk', 'jkljkl');
