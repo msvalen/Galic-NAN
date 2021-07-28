@@ -11,6 +11,19 @@ module.exports = class Users {
 
   // returns all user stocks
 
+  static get all() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        // console.log(db);
+        const result = await db.query("SELECT * FROM users;");
+        const users = result.rows.map((u) => ({ id: u.id, name: u.name }));
+        resolve(users);
+      } catch (err) {
+        reject("Error retrieving users");
+      }
+    });
+  }
+
   static get usersStocks() {
     return new Promise(async (resolve, reject) => {
       try {
