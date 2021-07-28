@@ -28,6 +28,9 @@
     - StocksBought are being shown in the stocks bought route.
     - Made some changes to the controllers.
     - Added a index function to show by index.
+    - Add an update route
+    - Add functionality to allow for the stocks, to be updated, found by id pr by particular user.
+    - Only get a particular user's stocks.
 
 ## Database
 
