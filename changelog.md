@@ -12,6 +12,7 @@
     - Modified client routing
     - Changed Porfolio to work with portfolio.html
     - Added dummy functions to request.js file
+    - Added login page with graphic 
 
 ## Sever
 
