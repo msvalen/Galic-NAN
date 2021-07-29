@@ -4,7 +4,11 @@ const formyahoo = document.querySelector('#yahoo-form');
 // Bind Event Listeners
 formyahoo.addEventListener('submit', searchstock);
 
-
+function replaceName() {
+let sect = document.getElementById('usernameTop')
+if (localStorage.username && localStorage.username !== "undefined"){
+sect.textContent = "Hello " + localStorage.username + "!"}}
+replaceName()
 
 function searchstock(e) {
     e.preventDefault(); //Stops page reloading
@@ -36,3 +40,7 @@ function searchstock(e) {
 
 }
 
+function logout(){
+    localStorage.clear();
+    window.location = "./index.html";
+}
