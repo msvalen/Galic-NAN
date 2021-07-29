@@ -83,7 +83,7 @@ module.exports = class Users {
     return new Promise(async (resolve, reject) => {
       try {
         let userEmail = await db.query(
-          "SELECT * FROM users WHERE user_email = $1;",
+          "SELECT * FROM users WHERE email = $1;",
           [email]
         );
         let user = new Users(userEmail.rows[0]);
