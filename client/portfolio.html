@@ -1960,19 +1960,19 @@
 
             <div class="flex flex-col pt-4">
               <label for="Fees" class="text-lg">Quantity</label>
-              <input type="number" min="0" id="Fees" placeholder="20" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+              <input type="number" min="0" id="quantity" placeholder="20" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
                         focus:border">
             </div>
 
             <div class="flex flex-col pt-4">
               <label for="Fees" class="text-lg">Unit/Share Price ($)</label>
-              <input type="number" min="0" id="Fees" placeholder="2,727.63" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+              <input type="number" min="0" id="sharePrice" placeholder="2,727.63" class="shadow   border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
                         focus:border">
             </div>
 
             <div class="flex flex-col pt-4">
               <label for="Date" class="text-lg">Date of Purchase</label>
-              <input type="date" id="Date" class="shadow border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+              <input type="date" id="Dateform" class="shadow border rounded-md w-full py-2 px-3 text-gray-700 mt-1 leading-tight  outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
                         focus:border">
             </div>
 
@@ -1980,8 +1980,7 @@
             <div class="flex flex-col justify-center w-full mt-8 rounded-xl py-4 bg-indigo-50"><p class="text-center">Total:</p> <p class="text-center text-3xl">$ ... </p></div>
 
             <div id="subbtndiv" class="flex justify-center">
-              <input id="submitbtn" type="submit" value="Autofill based on Ticker"
-                class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8">
+              <button class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8" onclick="showmoreoptions()" > Autofill </button>
 
                 <button class=" mx-2 text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 mt-8" onclick="showmoreoptions()" > More Options </button>
 
@@ -1994,17 +1993,51 @@
 
           </form> <div id="moreOptions" class="hidden">
           <p class="text-center">or</p>
+
           <div id="buttons_post" class="flex justify-center pt-4 text-xs">
             <div  class="flex text-base items-center px-3 underline font-semibold" >Import
               from
               Broker </div>
             <div class="flex text-base items-center px-3 underline font-semibold">CSV Import
             </div>
-            <div id="addGifBtm" 
+            <div id="" 
               class="flex text-base items-center px-3 underline font-semibold">Broker Email
               Import
               </div> </div>
+
+              
           </div>
+
+
+          <div id="Yahoo" class="">
+
+            <div> 
+<form id="yahoo-form"  "> <label for="Tickersearch" class="text-lg">Search Ticker: </label>
+  <div class="flex justify-center h-14">
+  <input id="StockTickersearch" style="text-transform:uppercase" placeholder="GOOG" class="shadow border rounded-md w-full px-3 text-gray-700 leading-tight outline-none focus:outline-none focus-within:border-indigo-500 transition-all duration-500
+  focus:border">               <input id="submitbtnyahoo" type="submit" value="Autofill"
+  class=" text-white bg-indigo-500 rounded-full focus:bg-indigo-600 w-auto px-6 font-bold text-lg p-2 ml-6 "> </div> </form>
+
+            </div>
+
+                
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
