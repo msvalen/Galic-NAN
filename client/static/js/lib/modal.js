@@ -10,6 +10,7 @@ all_modals.forEach((modal)=>{
     modalSelected.style.display = 'none';
 })
 
+
 // Close Modal 
 const modalClose = (modal) => {
     const modalToClose = document.querySelector('.'+modal);
@@ -21,6 +22,7 @@ const modalClose = (modal) => {
     let sect = document.getElementById('moreOptions');
     sect.classList.add('hidden');
 }
+
 
 //Open Modal 
 const openModal = (modal) => {
@@ -38,6 +40,7 @@ function showmoreoptions() {
 
 
 // const { deleteSell, deleteBuy, updateBuy, createSell} = require('./requests');
+
 
 // //updatebuy
 // function changeHoldingForm(id){
@@ -65,7 +68,9 @@ function showmoreoptions() {
 //         p.innerText = 'This past holding has been deleted';
 //     }
 //     catch(error)}
+
     
+
 
 
 
