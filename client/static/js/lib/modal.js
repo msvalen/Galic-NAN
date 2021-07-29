@@ -10,11 +10,11 @@ all_modals.forEach((modal)=>{
     modalSelected.style.display = 'none';
 })
 
-<<<<<<< HEAD
+
 //updatebuy
 function changeHoldingForm(id){
     //
-=======
+
 // Close Modal 
 const modalClose = (modal) => {
     const modalToClose = document.querySelector('.'+modal);
@@ -26,7 +26,6 @@ const modalClose = (modal) => {
     let sect = document.getElementById('moreOptions');
     sect.classList.add('hidden');
 }
->>>>>>> c381e6e5105522791c29285d736d2c62e263b1aa
 
 //Open Modal 
 const openModal = (modal) => {
@@ -40,13 +39,10 @@ function showmoreoptions() {
     let sect = document.getElementById('moreOptions');
     sect.classList.remove('hidden');
 }
-
-
-
 // const { deleteSell, deleteBuy, updateBuy, createSell} = require('./requests');
 
-<<<<<<< HEAD
-}
+
+
 // onclick(deleteSellEvent(invest.id))
 function deleteSellEvent(data){
     const p = document.getElementById('deleteMessage')
@@ -55,7 +51,7 @@ function deleteSellEvent(data){
         p.innerText = 'This past holding has been deleted';
     }
     catch(error){}
-=======
+}
 // //updatebuy
 // function changeHoldingForm(id){
 // asd
@@ -82,21 +78,14 @@ function deleteSellEvent(data){
 //         p.innerText = 'This past holding has been deleted';
 //     }
 //     catch(error)}
->>>>>>> c381e6e5105522791c29285d736d2c62e263b1aa
-    
 
-<<<<<<< HEAD
 module.exports = {
     changeHoldingForm,
    // deletePastHoldingForm
 }
-=======
-
-
-
 
 // module.exports={
 //     changeHoldingForm,
 //     deletePastHoldingForm,
 // }
->>>>>>> c381e6e5105522791c29285d736d2c62e263b1aa
+
