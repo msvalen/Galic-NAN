@@ -133,7 +133,13 @@ function logout(){
 //logout
 
 module.exports = {
+<<<<<<< HEAD
     showPortfolio,
     login,
     logout
 };
+=======
+    showPortfolio
+};
+
+>>>>>>> c381e6e5105522791c29285d736d2c62e263b1aa
