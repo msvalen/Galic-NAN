@@ -74,7 +74,8 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
 | Create | /user | POST | Create a new user | 
-| Create | /user/buys | POST | User buy new stock |
+| Create | /buys | POST | User buy new stock |
+| Create | /sells | POST | User sold old stock |
 
 
 ### Get
@@ -82,20 +83,22 @@ Allow users the ability to track their portfolio, with their chosen stocks, moni
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
 | Root | / | GET | api started |
-| Show | /user/:id | GET | Retrieve all the stocks of a user |
-| Show | /user/buys/:id | GET | Show a particular buy |
+| Show | /user/:id | GET | Retrieve all the sell and buy of a user |
+| Show | /buys/:id | GET | Show a particular buy |
 
 ###  Update
 
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
-| Update | /user/buys/:id | UPDATE | Change the status of a buy to been sold |
+| Update | /buys/ | PATCH | Make smaller the num of shares |
 
 ### Delete
 
 | Route Name | URL | HTTP Verb | Description |
 |-----|----|----|--|
 | Destroy | /user | DELETE | Destroy user and their buys history |
+| Destroy | /buys/ | DELETE | Destroy a buy because it has been sold |
+| Destroy | /sells/ | DELETE | Destroy a sell because user wants |
 
 
 ## Changelog 
