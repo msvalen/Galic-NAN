@@ -110,3 +110,9 @@ Find the full changelog [here](./changelog.md)
 ## License
 
 [MIT License](https://opensource.org/licenses/mit-license.php)
+
+########### BUGS / OUTSTANDING DEV ###########
+
+- [ ] DB more secure (so token of user1 doesn't allow you to see the investment of user2)
+- [ ] Improved error handling (add teapod error)
+- [ ] Allow users to delete their information
