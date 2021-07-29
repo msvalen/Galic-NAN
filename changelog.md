@@ -36,6 +36,7 @@
     - Fixed server (user and stockbought)
     - Added Sells
     - Edited Users funtion that retrieve the list of stocks
+    - Fixed Auth and added verification to the routes
 
 ## Database
 
@@ -50,5 +51,6 @@
     - Created README
     - Docker compose running
     - Easy start scripts done
-
-## Stretch Goals
+    - Easy teardown done
+    - Easy stop done
+    - Docker compose yml for the tests done
