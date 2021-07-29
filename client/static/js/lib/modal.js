@@ -11,6 +11,10 @@ all_modals.forEach((modal)=>{
 })
 
 
+//updatebuy
+function changeHoldingForm(id){
+    //
+
 // Close Modal 
 const modalClose = (modal) => {
     const modalToClose = document.querySelector('.'+modal);
@@ -22,7 +26,6 @@ const modalClose = (modal) => {
     let sect = document.getElementById('moreOptions');
     sect.classList.add('hidden');
 }
-
 
 //Open Modal 
 const openModal = (modal) => {
@@ -36,6 +39,7 @@ function showmoreoptions() {
     let sect = document.getElementById('moreOptions');
     sect.classList.remove('hidden');
 }
+
 
 function hidemoreoptions() {
     let sect = document.getElementById('moreOptions');
@@ -54,9 +58,20 @@ function hideautofill() {
 
 
 
+
 // const { deleteSell, deleteBuy, updateBuy, createSell} = require('./requests');
 
 
+
+// onclick(deleteSellEvent(invest.id))
+function deleteSellEvent(data){
+    const p = document.getElementById('deleteMessage')
+    try{
+        deleteSell(data);
+        p.innerText = 'This past holding has been deleted';
+    }
+    catch(error){}
+}
 // //updatebuy
 // function changeHoldingForm(id){
 // asd
@@ -84,14 +99,13 @@ function hideautofill() {
 //     }
 //     catch(error)}
 
-    
-
-
-
-
-
+module.exports = {
+    changeHoldingForm,
+   // deletePastHoldingForm
+}
 
 // module.exports={
 //     changeHoldingForm,
 //     deletePastHoldingForm,
 // }
+
