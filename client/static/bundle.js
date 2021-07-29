@@ -467,6 +467,21 @@ function showmoreoptions() {
     sect.classList.remove('hidden');
 }
 
+function hidemoreoptions() {
+    let sect = document.getElementById('moreOptions');
+    sect.classList.add('hidden');
+}
+
+function showautofill() {
+    let sect = document.getElementById('Yahoo');
+    sect.classList.remove('hidden');
+}
+
+function hideautofill() {
+    let sect = document.getElementById('Yahoo');
+    sect.classList.add('hidden');
+}
+
 
 
 // const { deleteSell, deleteBuy, updateBuy, createSell} = require('./requests');
