@@ -184,15 +184,17 @@ async function getAll(){
 
 async function sendbuy(e){
     e.preventDefault();
-    const data =Object.fromEntries(new FormData(e.target));
-    data.user_id = localStorage.getItem('userid');
+
+    let bodyData = Object.fromEntries(new FormData(e.target));
+    bodyData.user_id = localStorage.getItem('userid');
     try {
         const options = {
             headers: new Headers({'token': localStorage.getItem('token')}),
             method: 'POST',
-            body: JSON.stringify(data)
+            body: JSON.stringify(bodyData)
         }
-        const r = await fetch(`${url}buys`, options)
+        console.log(options.body)
+        const r = await fetch(`http://localhost:5000/buys`, options)
         const data = await r.json()
         if (data.err){ throw Error(data.err) }
         requestLogin(e);
