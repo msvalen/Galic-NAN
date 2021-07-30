@@ -4,7 +4,9 @@ const addInvestmentform = document.querySelector('#addInvestmentform');
 
 // Bind Event Listeners
 formyahoo.addEventListener('submit', searchstock);
-addInvestmentform.addEventListener('submit', sendbuy)
+addInvestmentform.addEventListener('submit', sendbuy);
+
+const url = process.env.URL || 'http://localhost:5000/';
 
 function replaceName() {
 let sect = document.getElementById('usernameTop')
@@ -189,7 +191,6 @@ async function showPortfolio(){
     }
 }
 
-const url = 'http://localhost:5000/'
 async function getAll(){
     try {
         const options = { headers: new Headers({'token': localStorage.getItem('token')}) }
@@ -221,7 +222,7 @@ async function sendbuy(e){
             body: JSON.stringify(bodyData)
         };
         console.log(options);
-        const r = await fetch(`http://localhost:5000/buys`, options);
+        const r = await fetch(`${url}buys`, options);
         const data = await r.json();
         if (data.err){ throw Error(data.err) };
         removehash();

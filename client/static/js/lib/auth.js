@@ -1,5 +1,7 @@
 const formlogin = document.querySelector('#login');
 
+const url = process.env.URL || 'http://localhost:5000/';
+
 const formregister = document.querySelector('#register');
 // formlogin.addEventListener('submit', requestLogin);
 
@@ -15,7 +17,7 @@ async function requestLogin(e) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
         }
-        const r = await fetch(`http://localhost:5000/auth/login`, options)
+        const r = await fetch(`${url}auth/login`, options)
         const data = await r.json()
         if (!data.success) {
             let bottomtext = document.getElementById('bottomtext')
@@ -55,7 +57,7 @@ async function requestRegistration(e) {
         
 
         
-        const r = await fetch("http://localhost:5000/auth/register", options)
+        const r = await fetch(`${url}auth/register`, options)
 
         const data = await r.json()
         if (data.err){ throw Error(data.err) }
