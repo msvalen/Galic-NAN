@@ -35,20 +35,17 @@ async function login(req, res){
     console.log(authed)
     if (!!authed) {
       const payload = { username: user.name, id: user.id };
-      const sendToken = (err, token) => {
+      const sendToken = (err, token) => { 
         if (err) {
           throw new Error("Error in token generation");
         }
-        res.status(200).json({
-          success: true,
-          token: token,
-        });
-      };
-      jwt.sign(payload, process.env.SECRET, { expiresIn: 3600 }, sendToken);
+        jwt.sign(payload, process.env.SECRET, { expiresIn: 360 }, sendToken);
+      }
     } else {
-      throw new Error("User could not be authenticated");
+        throw new Error('User could not be authenticated')  
     }
   } catch (err) {
+    console.log(err);
     res.status(401).json({ err });
   }
 };
