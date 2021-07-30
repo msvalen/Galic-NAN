@@ -6,8 +6,8 @@ formyahoo.addEventListener('submit', searchstock);
 
 function replaceName() {
 let sect = document.getElementById('usernameTop')
-if (localStorage.username && localStorage.username !== "undefined"){
-sect.textContent = "Hello " + localStorage.username + "!"}}
+if (localStorage.userEmail && localStorage.userEmail !== "undefined"){
+sect.textContent =  localStorage.userEmail}}
 replaceName()
 
 function searchstock(e) {
