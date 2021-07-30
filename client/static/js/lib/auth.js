@@ -1,8 +1,11 @@
 const formlogin = document.querySelector('#login');
 
+const formregister = document.querySelector('#register');
+// formlogin.addEventListener('submit', requestLogin);
+
 
 formlogin.addEventListener('submit', requestLogin);
-
+formregister.addEventListener('submit', requestRegistration);
 
 async function requestLogin(e) {
     e.preventDefault();
@@ -32,8 +35,9 @@ async function requestLogin(e) {
 
 function login(token){
     const user = jwt_decode(token);
+    console.log(user);
     localStorage.setItem("token", token);
-    localStorage.setItem("username", user.username);
+    localStorage.setItem("username", user.iat);
     localStorage.setItem("userEmail", user.email);
     window.location = "./portfolio.html";
 }
@@ -48,7 +52,11 @@ async function requestRegistration(e) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
         }
-        const r = await fetch(`http://localhost:5000/auth/register`, options)
+        
+
+        
+        const r = await fetch("http://localhost:5000/auth/register", options)
+
         const data = await r.json()
         if (data.err){ throw Error(data.err) }
         requestLogin(e);
