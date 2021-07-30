@@ -30,10 +30,11 @@ async function login(req, res){
     if (!user) {
       throw new Error("No user with this email");
     }
+    console.log(user.password)
     const authed = await bcrypt.compare(req.body.password, user.password); //Add passwordDigest in users model?
-    
+    console.log(authed)
     if (!!authed) {
-      const payload = { username: user.username, id: user.id };
+      const payload = { username: user.name, id: user.id };
       const sendToken = (err, token) => {
         if (err) {
           throw new Error("Error in token generation");
