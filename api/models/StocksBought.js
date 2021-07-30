@@ -52,46 +52,30 @@ class StocksBought {
       
       try {
         if(!buyData.date_of_purchase){
-          const {
-            ticker,
-            fee,
-            buy_level,
-            num_shares,
-            stored_price,
-            user_id
-          } = buyData;
           let result = await db.query(
             `INSERT INTO buys (ticker, fee, buy_level, num_shares, stored_price,user_id) VALUES ($1,$2,$3,$4,$5,$6) RETURNING buy_id`,
             [
-              ticker,
-              fee,
-              buy_level,
-              num_shares,
-              stored_price,
-              user_id
+              buyData.ticker,
+              buyData.fee,
+              buyData.buy_level,
+              buyData.num_shares,
+              buyData.stored_price,
+              buyData.user_id
             ]
           );
           resolve(result.rows[0]);
         }
         else{
-            const {
-              ticker,
-              fee,
-              buy_level,
-              num_shares,
-              stored_price,
-              user_id, date_of_purchase
-            } = buyData;
             let result = await db.query(
               `INSERT INTO buys (ticker, fee, buy_level, num_shares, stored_price, user_id, date_of_purchase) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING buy_id`,
               [
-                ticker,
-                fee,
-                buy_level,
-                num_shares,
-                stored_price,
-                user_id,
-                date_of_purchase
+                buyData.ticker,
+                buyData.fee,
+                buyData.buy_level,
+                buyData.num_shares,
+                buyData.stored_price,
+                buyData.user_id,
+                buyData.date_of_purchase
               ]
             );
             resolve(result.rows[0]);
